@@ -7,7 +7,9 @@ title: Algo
 <ul>
     {% for piece in site.pieces %}
     <li>
-        <h2><a href="{{ piece.url }}">{{ piece.title }}</a></h2>
+        <h2>
+            <a href="{{ piece.url }}">{{ piece.name }}</a>
+        </h2>
     </li>
     {% endfor %}
 </ul>
