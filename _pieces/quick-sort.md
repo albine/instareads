@@ -1,11 +1,42 @@
 ---
 name: Quick Sort
 ---
-A banana is an edible fruit – botanically a berry – produced by several kinds
-of large herbaceous flowering plants in the genus Musa.
+```java
+public class Sort {
+    public static void sort(int[] a) {
+        return sort(a, 0, a.length - 1);
+    }
 
-In some countries, bananas used for cooking may be called "plantains",
-distinguishing them from dessert bananas. The fruit is variable in size, color,
-and firmness, but is usually elongated and curved, with soft flesh rich in
-starch covered with a rind, which may be green, yellow, red, purple, or brown
-when ripe.
+    private static sort(int[] a, int lo, int hi) {
+        if (hi <= lo) return;
+        int j = partition(a, lo, hi);
+        sort(a, lo, j - 1);
+        sort(a, j + 1, hi);
+    }
+
+    private static partition(a, lo, hi) {
+        int i = lo, j = hi;
+        int v = a[lo];
+        while (true) {
+            while (a[i] < v) {
+                i++;
+                if (i == hi) break;
+            }
+            while (a[j] > v) {
+                j--;
+                if (j == lo) break;
+            }
+            if (i == j) break;
+            swap(a, i, j);
+        }
+        swap(a, lo, j);
+        return j;
+    }
+
+    private static void swap(int[] a, int i, int j) {
+        int tmp = a[i];
+        a[i] = a[j];
+        a[j] = tmp;
+    }
+}
+```
