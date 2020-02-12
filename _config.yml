@@ -1,6 +1,9 @@
 collections:
   authors:
     output: true
+  pieces:
+    output: true
+
     
 defaults:
   - scope:
@@ -17,3 +20,8 @@ defaults:
       path: ""
     values:
       layout: "default"
+  - scope:
+      path: ""
+      type: "pieces"
+    values:
+      layout: "piece"
