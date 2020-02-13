@@ -1,3 +1,7 @@
+---
+name: Priority Queue
+---
+```java
 public class ResizingArrayMaxPQ<Key extends Comparable<Key>> {
     private Key[] pq;
     private int N = 0;
@@ -42,3 +46,4 @@ public class ResizingArrayMaxPQ<Key extends Comparable<Key>> {
         }
     }
 }
+```
