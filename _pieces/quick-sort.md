@@ -15,17 +15,11 @@ public class Sort {
     }
 
     private static int partition(int[]a, int lo, int hi) {
-        int i = lo + 1, j = hi;
+        int i = lo, j = hi + 1;
         int v = a[lo];
         while (true) {
-            while (a[i] < v) {
-                i++;
-                if (i == hi) break;
-            }
-            while (a[j] > v) {
-                j--;
-                if (j == lo) break;
-            }
+            while (a[++i] < v) if (i == hi) break;
+            while (a[--j] > v) if (j == lo) break;
             if (i >= j) break;
             swap(a, i, j);
         }
